@@ -72,6 +72,7 @@ const Home = () => {
       <Header />
       <div className="page-container" id="aboutdetails">
         <div className="description-container">
+          <p className="profession-title">UI/UX Designer</p>
           <h1 className="portfolio-heading">Hello, my name is Madelyn Torff</h1>
           <p className="portfolio-description">
             Short text with details about you, what you do or your professional

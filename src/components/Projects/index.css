@@ -12,19 +12,7 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-.project-details-section {
-    width: 990px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.projects-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-   align-items: center;
-}
+
 .heading-container {
     height: 500px;
     width: 500px;
@@ -50,37 +38,69 @@
  text-align: left;
 
 }
-.project-description {
-font-family: "Nunito";
-font-size: 18px;
-font-weight: 400;
-line-height: 27px;
-letter-spacing: 0em;
-text-align: left;
-color: #828282;
-}
-.project-title {
-font-family: 'Playfair Display';
-font-size: 48px;
-font-weight: 700;
-line-height: 72px;
-letter-spacing: 0em;
-text-align: center;
-}
+
+
 .contact-image {
     height: 100px;
     width: 200px;
 }
-.contact {
-    display: flex;
-}
-.icon {
-    height: 50px;
-    width: 50px;
-    margin-right: 12px;
-}
-.contacts-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+@media screen and (max-width: 765px) { 
+    .list-items {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        box-shadow: 0px 6px 64px 0px #7090B01A;
+        height: 280px;
+        width: 350px;
+        padding: 15px;
+        margin-right: 20px
+    }
+    .project-name {
+        height: 300px;
+        width: 200px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    
+    .heading-container {
+        height: 300px;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px;
+    }
+    .view-project-button {
+        height: 30px;
+        width: 100px;
+        font-weight: bold;
+        border-radius: 30px;
+        border: 1px solid #25282B;
+        color: #25282B;
+        font-size: 10px;
+    }
+    .project-heading {
+     font-family: "Playfair Display";
+     font-size: 16px;
+     font-weight: 700;
+     line-height: 60px;
+     letter-spacing: 0em;
+     text-align: left;
+    
+    }
+    .project-description {
+        font-family: "Nunito";
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 27px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #828282;
+        }
+    
+    .contact-image {
+        height: 50px;
+        width: 50px;
+    }
 }

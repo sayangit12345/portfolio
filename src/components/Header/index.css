@@ -27,9 +27,34 @@ height: 35px;
     font-weight: 500;
     line-height: 28px;
     letter-spacing: 0px;
-    text-align: left;
 }
 .hyperlink {
     text-decoration: none;
     color: black;
 }
+@media screen and (max-width: 765px) {
+    .header-item-container {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 150px;
+        margin-right: 35px;
+    }
+    .nav-heading {
+        font-family: 'Comfortaa';
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: 0px;
+        text-align: left;
+        margin-left: 25px;
+    }
+    .nav-description {
+        font-family: 'Raleway';
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0px;
+    }
+  }
