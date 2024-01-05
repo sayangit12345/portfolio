@@ -1,12 +1,16 @@
 import "./index.css";
+import { v4 as uuidv4 } from "uuid";
+import { useState } from "react";
+
+import { RiInstagramFill } from "react-icons/ri";
+import { FaLinkedin } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
 import Header from "../Header";
 import Projects from "../Projects";
-import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 
 const projectData = [
   {
-    id: 1,
+    id: uuidv4(),
     heading: "Project Name",
     details:
       "I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.",
@@ -14,7 +18,7 @@ const projectData = [
       "https://res.cloudinary.com/duiooro44/image/upload/v1704379715/pexels-elly-fairytale-3823207_1_a9w6sq.png",
   },
   {
-    id: 2,
+    id: uuidv4(),
     heading: "Project Name",
     details:
       "What was your role, your deliverables, if the project was personal, freelancing.",
@@ -22,7 +26,7 @@ const projectData = [
       "https://res.cloudinary.com/duiooro44/image/upload/v1704379677/Rectangle_7_1_ywirre.png",
   },
   {
-    id: 3,
+    id: uuidv4(),
     heading: "Project Name",
     details:
       "You can also add in this description the type of the project, if it was for web, mobile, electron.",
@@ -36,7 +40,6 @@ const Home = () => {
   const [name, setName] = useState("");
   const [link, setLink] = useState("");
   const [description, setDescription] = useState("");
-  const [data, setData] = useState({});
 
   const onchangeProjectName = (event) => {
     setName(event.target.value);
@@ -55,11 +58,13 @@ const Home = () => {
     const newObj = {
       id: uuidv4(),
       heading: name,
-      description: description,
-      imgUrl:
-        "https://res.cloudinary.com/duiooro44/image/upload/v1704379990/Rectangle_7_efcvvb.png",
+      details: description,
+      imgUrl: link,
     };
     setList((prevArray) => [...prevArray, newObj]);
+    setName("");
+    setLink("");
+    setDescription("");
   };
 
   return (
@@ -102,6 +107,7 @@ const Home = () => {
               type="text"
               className="input"
               id="username"
+              value={name}
               onChange={onchangeProjectName}
             />
           </div>
@@ -113,6 +119,7 @@ const Home = () => {
               type="text"
               className="input"
               id="username"
+              value={link}
               onChange={onchangeProjectUrl}
             />
           </div>
@@ -125,8 +132,9 @@ const Home = () => {
               rows="4"
               cols="50"
               id="w3review"
+              value={description}
               onChange={onchangeProjectDescription}
-            ></textarea>
+            />
           </div>
           <div className="button-container">
             <button type="submit" className="add-button">
@@ -140,7 +148,29 @@ const Home = () => {
         alt="footer"
         className="footer"
       />
-      <Projects data={list} />
+      <div className="projects-container" id="projectdetails">
+        <h1 className="project-title">Projects</h1>
+        <ul className="project-details-section">
+          {list.map((eachData) => (
+            <Projects key={eachData.id} projectDetails={eachData} />
+          ))}
+        </ul>
+        <div className="contacts-container" id="contactdetails">
+          <div className="contact">
+            <RiInstagramFill className="icon" />
+            <FaLinkedin className="icon" />
+            <IoIosMail className="icon" />
+          </div>
+          <p className="project-description">
+            Copyright © 2024. All rights reserved
+          </p>
+        </div>
+        <img
+          src="https://res.cloudinary.com/duiooro44/image/upload/v1704378674/Vector_lfsi8p.png"
+          alt="footer"
+          className="footer"
+        />
+      </div>
     </div>
   );
 };
